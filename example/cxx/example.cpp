@@ -86,4 +86,3 @@ int main()
     std::cout << "p-value = " << test2.pvalue() << "\n";
     return 0;
 }
-
