@@ -8,8 +8,8 @@ import random
 from alps import alea
 
 obs = alea.var()
-for i in range(1024):
+for i in range(1 << 16):
     obs.add(random.random())
 
 res = obs.finalize()
-print(res.count(), res.mean(), res.var(), res.stderror())
+print("<X> = {} +/- {}".format(res.mean(), res.stderror()))

@@ -3,9 +3,12 @@
 template<class T>
 class py_mean_result {
 public:
-  py_mean_result(const alps::alea::mean_result<T>& res) : res_(res) {}
+  py_mean_result(const alps::alea::mean_result<T>& res) : res_(res) {
+    if (this->size() != 1) throw std::logic_error("py_mean_result: size error");
+  }
   auto count() const { return res_.count(); }
-  auto mean() const { return std::vector<T>(res_.mean())[0]; }
+  auto size() const { return res_.size(); }
+  auto mean() const { return alps::alea::column<T>(res_.mean())[0]; }
 private:
   alps::alea::mean_result<T> res_;
 };

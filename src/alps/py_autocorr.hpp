@@ -3,8 +3,11 @@
 template<class T>
 class py_autocorr_result {
 public:
-  py_autocorr_result(const alps::alea::autocorr_result<T>& res) : res_(res) {}
+  py_autocorr_result(const alps::alea::autocorr_result<T>& res) : res_(res) {
+    if (this->size() != 1) throw std::logic_error("py_autocorr_result: size error");
+  }
   auto count() const { return res_.count(); }
+  auto size() const { return res_.size(); }
   auto mean() { return std::vector<T>(res_.mean())[0]; }
   auto var() { return std::vector<T>(res_.var())[0]; }
   auto stderror() { return std::vector<T>(res_.stderror())[0]; }

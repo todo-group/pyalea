@@ -8,8 +8,9 @@ import random
 from alps import alea
 
 obs = alea.autocorr()
-for i in range(1024):
+for i in range(1 << 16):
     obs.add(random.random())
 
 res = obs.finalize()
-print(res.count(), res.mean(), res.var(), res.stderror(), res.tau())
+print("<X> = {} +/- {}".format(res.mean(), res.stderror()))
+print("tau = {}".format(res.tau()))

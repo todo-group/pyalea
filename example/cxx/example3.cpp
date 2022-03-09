@@ -21,10 +21,10 @@ int main() {
 
     // random number generator
     std::mt19937 engine(0);
-    std::uniform_real_distribution<> uniform;
+    std::normal_distribution<> gauss(1.0, 0.5);
 
     for (int i = 0; i < nsamples; ++i) {
-        auto x = uniform(engine);
+        auto x = gauss(engine);
         xa << alps::alea::column<double>{ x, x * x };
         xb << alps::alea::column<double>{ x, x * x };
     }
