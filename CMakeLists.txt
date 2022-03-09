@@ -3,7 +3,6 @@ include(cmake/prefix.cmake)
 project(pyalea CXX)
 include(cmake/postfix.cmake)
 
-include(googletest)
 include(pybind11)
 FetchContent_MakeAvailable(${FetchContents})
 include_directories(${FetchContent_includes})

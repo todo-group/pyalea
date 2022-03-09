@@ -1,4 +1,6 @@
 set(PY_SOURCES mean.py var.py autocorr.py batch.py)
 foreach(name ${PY_SOURCES})
+  set(target_name python_${name})
   configure_file(${name} ${name} COPYONLY)
+  add_test(${target_name} ${PYTHON_EXECUTABLE} ${name})
 endforeach(name ${PY_SOURCES})

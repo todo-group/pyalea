@@ -7,6 +7,8 @@ sys.path.append(os.path.join(currentdir, '../../src'))
 import random
 from alps import alea
 
+random.seed(1234)
+
 obs = alea.batch_1()
 for i in range(1 << 16):
     obs.add(random.random())
@@ -43,3 +45,5 @@ print("<x^2>/<X> = {} +/- {}".format(p.mean(0), p.stderror(0)))
 
 p = res.binder()
 print("<x^2>/<X>^2 = {} +/- {}".format(p.mean(0), p.stderror(0)))
+
+assert(abs(p.mean(0) - 1.3322541278262399) < 1e-8)

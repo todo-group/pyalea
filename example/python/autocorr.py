@@ -7,6 +7,8 @@ sys.path.append(os.path.join(currentdir, '../../src'))
 import random
 from alps import alea
 
+random.seed(1234)
+
 obs = alea.autocorr()
 for i in range(1 << 16):
     obs.add(random.random())
@@ -14,3 +16,5 @@ for i in range(1 << 16):
 res = obs.finalize()
 print("<X> = {} +/- {}".format(res.mean(), res.stderror()))
 print("tau = {}".format(res.tau()))
+
+assert(abs(res.mean() - 0.5006153053752365) < 1e-8)

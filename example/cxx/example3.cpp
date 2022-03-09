@@ -57,4 +57,6 @@ int main() {
     std::function<double(double, double)> f3 = [](double x0, double x1) { return x1 / (x0 * x0); };
     auto prop3 = alps::alea::transform(alps::alea::jackknife_prop(), alps::alea::make_transformer(f3), xbatch);
     std::cout << "<X^2>/<x>^2 = " << prop3 << "\n";
+
+    if (std::abs(prop3.mean()[0] - 1.25057) > 1e-5) throw std::runtime_error("error");
 }

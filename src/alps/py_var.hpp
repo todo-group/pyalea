@@ -8,9 +8,9 @@ public:
   }
   auto count() const { return res_.count(); }
   auto size() const { return res_.size(); }
-  auto mean() { return std::vector<T>(res_.mean())[0]; }
-  auto var() { return std::vector<T>(res_.var())[0]; }
-  auto stderror() { return std::vector<T>(res_.stderror())[0]; }
+  auto mean() { return alps::alea::column<T>(res_.mean())[0]; }
+  auto var() { return alps::alea::column<T>(res_.var())[0]; }
+  auto stderror() { return alps::alea::column<T>(res_.stderror())[0]; }
 private:
   alps::alea::var_result<T> res_;
 };

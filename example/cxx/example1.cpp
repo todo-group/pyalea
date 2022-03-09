@@ -1,3 +1,4 @@
+#include <cmath>
 #include <random>
 #include <iostream>
 #include <alps/alea.hpp>
@@ -39,4 +40,6 @@ int main() {
     std::function<double(double)> f2 = [] (double x) { return std::log(x); };
     auto prop2 = alps::alea::transform(alps::alea::jackknife_prop(), alps::alea::make_transformer(f2), xbatch);
     std::cout << "log(<X>) = " << prop2 << "\n";
+
+    if (std::abs(prop2.mean()[0] - (-0.694213)) > 1e-5) throw std::runtime_error("error");
 }
