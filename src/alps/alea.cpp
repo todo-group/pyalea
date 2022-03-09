@@ -6,6 +6,8 @@
 namespace py = pybind11;
 
 PYBIND11_MODULE(alea, m) {
+  m.doc() = "Python binding of alpscore::alea";
+
   py::class_<py_mean_result<double>>(m, "mean_result")
     .def(py::init<py_mean_result<double>>())
     .def("count", &py_mean_result<double>::count)
@@ -34,7 +36,7 @@ PYBIND11_MODULE(alea, m) {
     .def(py::init<py_autocorr_result<double>>())
     .def("count", &py_autocorr_result<double>::count)
     .def("mean", &py_autocorr_result<double>::mean)
-    .def("var", &py_autocorr_result<double>::var)
+    .def("var", &py_autocorr_result<double>::var  )
     .def("stderror", &py_autocorr_result<double>::stderror)
     .def("tau", &py_autocorr_result<double>::tau);
 

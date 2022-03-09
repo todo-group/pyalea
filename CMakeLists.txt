@@ -10,5 +10,5 @@ include_directories(${FetchContent_includes})
 
 find_package(ALPSCore REQUIRED)
 
-add_subdirectory(alps)
+add_subdirectory(src)
 add_subdirectory(example)
