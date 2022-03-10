@@ -5,7 +5,6 @@ include(cmake/postfix.cmake)
 
 include(pybind11)
 FetchContent_MakeAvailable(${FetchContents})
-include_directories(${FetchContent_includes})
 
 find_package(ALPSCore REQUIRED)
 
