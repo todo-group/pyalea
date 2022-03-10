@@ -1,4 +1,4 @@
-set(PY_SOURCES mean.py var.py autocorr.py batch.py)
+set(PY_SOURCES mean.py var.py autocorr.py batch.py ising.py)
 foreach(name ${PY_SOURCES})
   set(target_name python_${name})
   configure_file(${name} ${name} COPYONLY)

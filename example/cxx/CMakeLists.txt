@@ -1,4 +1,4 @@
-set(PROGS example1 example2 example3)
+set(PROGS example1 example2 example3 ising)
 foreach(name ${PROGS})
   set(target_name cxx_${name})
   add_executable(${target_name} ${name}.cpp)
