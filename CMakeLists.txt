@@ -10,4 +10,7 @@ include_directories(${FetchContent_includes})
 find_package(ALPSCore REQUIRED)
 
 add_subdirectory(src)
-add_subdirectory(example)
+
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+  add_subdirectory(example)
+endif()
