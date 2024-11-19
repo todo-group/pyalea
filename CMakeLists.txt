@@ -7,6 +7,7 @@ include(pybind11)
 FetchContent_MakeAvailable(${FetchContents})
 
 find_package(MPI REQUIRED)
+find_package(HDF5 REQUIRED)
 find_package(ALPSCore REQUIRED)
 
 add_subdirectory(src)
