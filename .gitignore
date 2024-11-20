@@ -1,1 +1,7 @@
 build
+**/*.py[cod]
+**/__pycache__
+**/*.egg-info
+**/.vscode
+**/*.code-workspace
+**/dump*

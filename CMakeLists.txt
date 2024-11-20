@@ -1,10 +1,11 @@
-cmake_minimum_required(VERSION 3.14...3.22)
+cmake_minimum_required(VERSION 3.15...3.30)
 include(cmake/prefix.cmake)
 project(pyalea CXX)
 include(cmake/postfix.cmake)
 
-include(pybind11)
-FetchContent_MakeAvailable(${FetchContents})
+find_package(Python REQUIRED COMPONENTS Interpreter Development.Module)
+find_package(pybind11 CONFIG REQUIRED)
+# FetchContent_MakeAvailable(${FetchContents})
 
 find_package(MPI REQUIRED)
 find_package(HDF5 REQUIRED)

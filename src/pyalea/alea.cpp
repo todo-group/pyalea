@@ -6,7 +6,7 @@
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(alea, m) {
+PYBIND11_MODULE(_core, m) {
   m.doc() = "Python binding of alpscore::alea";
 
   py::class_<py_mean_result<double>>(m, "mean_result")
@@ -59,7 +59,10 @@ PYBIND11_MODULE(alea, m) {
     .def("log", &py_batch_result<double>::log)
     .def("variance", &py_batch_result<double>::variance)
     .def("ratio", &py_batch_result<double>::ratio)
-    .def("binder", &py_batch_result<double>::binder);
+    .def("binder", &py_batch_result<double>::binder)
+    .def("ratio_10", &py_batch_result<double>::ratio_10)
+    .def("ratio_20", &py_batch_result<double>::ratio_20)
+    .def("ratio_variance", &py_batch_result<double>::ratio_variance);
 
   py::class_<py_batch_acc_1<double>>(m, "batch_1")
     .def(py::init<>())
@@ -72,4 +75,10 @@ PYBIND11_MODULE(alea, m) {
     .def("add", &py_batch_acc_2<double>::add)
     .def("result", &py_batch_acc_2<double>::result)
     .def("finalize", &py_batch_acc_2<double>::finalize);
+
+  py::class_<py_batch_acc_3<double>>(m, "batch_3")
+    .def(py::init<>())
+    .def("add", &py_batch_acc_3<double>::add)
+    .def("result", &py_batch_acc_3<double>::result)
+    .def("finalize", &py_batch_acc_3<double>::finalize);
 }

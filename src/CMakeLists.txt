@@ -1,1 +1,1 @@
-add_subdirectory(alps)
+add_subdirectory(pyalea)
