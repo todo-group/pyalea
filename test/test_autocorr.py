@@ -1,6 +1,8 @@
 import numpy as np
 from pytest import approx
+
 import pyalea
+
 
 def test_autocorr():
     np.random.seed(1234)

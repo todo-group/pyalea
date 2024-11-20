@@ -1,6 +1,7 @@
 import random
 
 from pytest import approx
+
 import pyalea
 
 
