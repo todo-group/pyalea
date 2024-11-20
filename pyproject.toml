@@ -5,23 +5,23 @@ build-backend = "scikit_build_core.build"
 [project]
 name = "pyalea"
 version = "0.0.1"
-description="Python bindings for alpscore::alea"
+description = "Python bindings for alpscore::alea"
 readme = "README.md"
 authors = [
-  { name = "Synge Todo", email = "wistaria@phys.s.u-tokyo.ac.jp" },
+    { name = "Synge Todo", email = "wistaria@phys.s.u-tokyo.ac.jp" },
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = ["numpy"]
 
 [project.optional-dependencies]
-dev = ["pytest", "black", "ruff"]
+dev = ["pytest", "ruff"]
 
 [tool.scikit-build]
 minimum-version = "0.5"
 build-dir = "build/{wheel_tag}"
 cmake.verbose = true
-
-[tool.black]
-target-version = ["py38"]
-include = '\.py$'
 
 [tool.ruff]
 target-version = "py38"

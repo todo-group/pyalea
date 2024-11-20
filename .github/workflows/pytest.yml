@@ -34,3 +34,6 @@ jobs:
       - name: pytest
         run: |
           pytest
+      - name: ctest
+        run: |
+          cd build && ctest -V
