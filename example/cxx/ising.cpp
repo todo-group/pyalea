@@ -35,10 +35,10 @@ inline int down(int L, int i) {
 }
 
 int main() {
-  int L = 8;
+  int L = 16;
   int N = L * L;
   double T = 2.269185314213022;
-  int nsamples = (1 << 12);
+  int nsamples = (1 << 20);
   int ntherm = nsamples / 8;
 
   std::vector<int> spins(N, 1);

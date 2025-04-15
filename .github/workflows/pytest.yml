@@ -19,7 +19,7 @@ jobs:
       - name: install alpscore
         run: |
           sudo apt-get install wget
-          wget https://sf.net/projects/materiappslive/files/Debian/sources/setup.sh
+          wget https://malive.s3.amazonaws.com/repos/setup.sh
           sudo sh setup.sh
           sudo apt -y install mpi-default-dev libboost-all-dev libhdf5-dev libalpscore-dev
       - name: upgrade pip
