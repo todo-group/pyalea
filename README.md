@@ -13,6 +13,7 @@ Installation
 
 * for development
   ```bash
-  $ pip install numpy pybind11 pytest black ruff scikit-build-core[pyproject]
+  $ pip install numpy pybind11 pytest ruff
   $ pip install -ve .
+  $ pytest
   ```
